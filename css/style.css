@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400&display=swap");
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: gray;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-family: "Tajawal", sans-serif;
+}
+body h2 {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+body p, body ul, body li {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 30px;
+  color: #000000;
+}
+body code, body .syntax {
+  font-family: "Ubuntu Mono";
+  font-weight: 400;
+  background-color: #e2e2e286;
+}
+body code {
+  padding: 2px;
+}
+body .syntax {
+  display: block;
+  padding: 1px 20px;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+body .syntax p {
+  padding: 0;
+  line-height: 10px;
+}
+body #main-doc {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas: "nav content content content";
+  height: 100%;
+}
+body #main-doc #navbar {
+  border-right: 1px solid #3535353a;
+  grid-area: nav;
+  overflow: scroll;
+}
+body #main-doc .doc-box {
+  grid-area: content;
+  box-sizing: border-box;
+  padding: 0 20px;
+  overflow: scroll;
+}
+body #main-doc .doc-box .main-section .reference {
+  color: black;
+}
+
+/*# sourceMappingURL=style.css.map */
