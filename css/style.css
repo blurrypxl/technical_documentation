@@ -22,6 +22,7 @@ body {
 body h2 {
   text-transform: uppercase;
   font-weight: bold;
+  color: #8421d4fa;
 }
 body p, body ul, body li {
   font-size: 18px;
@@ -54,15 +55,58 @@ body #main-doc {
   height: 100%;
 }
 body #main-doc #navbar {
-  border-right: 1px solid #3535353a;
   grid-area: nav;
-  overflow: scroll;
+  background-color: #8421d4fa;
+}
+body #main-doc #navbar header {
+  text-align: center;
+  color: white;
+}
+body #main-doc #navbar .links {
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+}
+body #main-doc #navbar .links li {
+  padding: 4px 0;
+  position: relative;
+  left: 0;
+  animation-name: slide-end;
+  animation-duration: 200ms;
+  animation-fill-mode: forwards;
+}
+@keyframes slide-end {
+  0% {
+    left: 15px;
+  }
+}
+body #main-doc #navbar .links li:hover {
+  animation-name: slide-start;
+  animation-duration: 200ms;
+  animation-fill-mode: forwards;
+}
+@keyframes slide-start {
+  100% {
+    left: 15px;
+  }
+}
+body #main-doc #navbar .links ul, body #main-doc #navbar .links li {
+  color: white;
+}
+body #main-doc #navbar .links ul a, body #main-doc #navbar .links li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
 }
 body #main-doc .doc-box {
   grid-area: content;
   box-sizing: border-box;
   padding: 0 20px;
   overflow: scroll;
+}
+body #main-doc .doc-box .main-section {
+  padding: 0 2vw;
+  text-align: justify;
 }
 body #main-doc .doc-box .main-section .reference {
   color: black;

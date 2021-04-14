@@ -10,6 +10,9 @@
 ::-webkit-scrollbar-thumb
     background-color: gray
 
+// Warna Primary
+$colorPrimary: #8421d4fa
+
 body
     // border: 1px solid black
     margin: 0
@@ -27,6 +30,7 @@ body
     h2
         text-transform: uppercase
         font-weight: bold
+        color: $colorPrimary
 
     p, ul, li
         font-size: 18px
@@ -60,9 +64,50 @@ body
         height: 100% // Mengatur Tinggi dari Class main-section
         
         #navbar
-            border-right: 1px solid #3535353a
             grid-area: nav
-            overflow: scroll 
+            background-color: $colorPrimary
+            // overflow: scroll
+
+            header
+                text-align: center
+                color: white
+
+            .links
+                text-transform: uppercase
+                display: flex
+                flex-direction: column
+                
+                li
+                    padding: 4px 0
+                    position: relative
+                    left: 0
+
+                    //Animasi hover list start
+                    animation-name: slide-end
+                    animation-duration: 200ms
+                    animation-fill-mode: forwards
+                
+                @keyframes slide-end
+                    0%
+                        left: 15px   
+                
+                li:hover
+                    //Animasi hover list end
+                    animation-name: slide-start
+                    animation-duration: 200ms
+                    animation-fill-mode: forwards
+
+                @keyframes slide-start
+                    100%
+                        left: 15px
+
+                ul, li
+                    color: white
+
+                    a
+                        text-decoration: none
+                        color: white
+                        font-weight: bold
         
         .doc-box
             // border: 1px solid green
@@ -72,5 +117,8 @@ body
             overflow: scroll
 
             .main-section
+                padding: 0 2vw
+                text-align: justify
+
                 .reference
                     color: black
