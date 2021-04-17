@@ -2,7 +2,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400&display=swap");
 ::-webkit-scrollbar {
   width: 10px;
-  background-color: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -32,7 +31,6 @@ body p, body ul, body li {
 }
 body code, body .syntax {
   font-family: "Ubuntu Mono";
-  font-weight: 400;
   background-color: #e2e2e286;
 }
 body code {
@@ -44,19 +42,16 @@ body .syntax {
   box-sizing: border-box;
   border-radius: 10px;
 }
-body .syntax p {
-  padding: 0;
-  line-height: 10px;
-}
 body #main-doc {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-areas: "nav content content content";
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-areas: "nav" "nav" "content" "content" "content";
   height: 100%;
 }
 body #main-doc #navbar {
   grid-area: nav;
   background-color: #8421d4fa;
+  overflow: scroll;
 }
 body #main-doc #navbar header {
   text-align: center;
@@ -68,35 +63,34 @@ body #main-doc #navbar .links {
   flex-direction: column;
 }
 body #main-doc #navbar .links li {
-  padding: 4px 0;
-  position: relative;
-  left: 0;
+  padding: 3px 0;
+}
+body #main-doc #navbar .links ul, body #main-doc #navbar .links li {
+  color: white;
+}
+body #main-doc #navbar .links ul a, body #main-doc #navbar .links li a {
+  padding-left: 0;
+  text-decoration: none;
+  color: white;
   animation-name: slide-end;
   animation-duration: 200ms;
   animation-fill-mode: forwards;
 }
 @keyframes slide-end {
   0% {
-    left: 15px;
+    padding-left: 7px;
   }
 }
-body #main-doc #navbar .links li:hover {
+body #main-doc #navbar .links ul a:hover, body #main-doc #navbar .links li a:hover {
+  font-weight: bold;
   animation-name: slide-start;
   animation-duration: 200ms;
   animation-fill-mode: forwards;
 }
 @keyframes slide-start {
   100% {
-    left: 15px;
+    padding-left: 7px;
   }
-}
-body #main-doc #navbar .links ul, body #main-doc #navbar .links li {
-  color: white;
-}
-body #main-doc #navbar .links ul a, body #main-doc #navbar .links li a {
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
 }
 body #main-doc .doc-box {
   grid-area: content;
@@ -106,10 +100,16 @@ body #main-doc .doc-box {
 }
 body #main-doc .doc-box .main-section {
   padding: 0 2vw;
-  text-align: justify;
 }
 body #main-doc .doc-box .main-section .reference {
   color: black;
+}
+@media screen and (min-width: 860px) {
+  body #main-doc {
+    grid-template-rows: auto;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: "nav content content content";
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
